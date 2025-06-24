@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Magul-Maha-Viharaya/static/css/main.e7188cac.css",
-    "main.js": "/Magul-Maha-Viharaya/static/js/main.8d1058d6.js",
+    "main.css": "/Magul-Maha-Viharaya/static/css/main.bfa9b35f.css",
+    "main.js": "/Magul-Maha-Viharaya/static/js/main.7716ad5e.js",
     "static/js/453.c56783e1.chunk.js": "/Magul-Maha-Viharaya/static/js/453.c56783e1.chunk.js",
     "index.html": "/Magul-Maha-Viharaya/index.html",
-    "main.e7188cac.css.map": "/Magul-Maha-Viharaya/static/css/main.e7188cac.css.map",
-    "main.8d1058d6.js.map": "/Magul-Maha-Viharaya/static/js/main.8d1058d6.js.map",
+    "main.bfa9b35f.css.map": "/Magul-Maha-Viharaya/static/css/main.bfa9b35f.css.map",
+    "main.7716ad5e.js.map": "/Magul-Maha-Viharaya/static/js/main.7716ad5e.js.map",
     "453.c56783e1.chunk.js.map": "/Magul-Maha-Viharaya/static/js/453.c56783e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7188cac.css",
-    "static/js/main.8d1058d6.js"
+    "static/css/main.bfa9b35f.css",
+    "static/js/main.7716ad5e.js"
   ]
 }
