@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Magul-Maha-Viharaya/static/css/main.134d5707.css",
+    "main.js": "/Magul-Maha-Viharaya/static/js/main.432c4517.js",
+    "static/js/453.c56783e1.chunk.js": "/Magul-Maha-Viharaya/static/js/453.c56783e1.chunk.js",
+    "index.html": "/Magul-Maha-Viharaya/index.html",
+    "main.134d5707.css.map": "/Magul-Maha-Viharaya/static/css/main.134d5707.css.map",
+    "main.432c4517.js.map": "/Magul-Maha-Viharaya/static/js/main.432c4517.js.map",
+    "453.c56783e1.chunk.js.map": "/Magul-Maha-Viharaya/static/js/453.c56783e1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.134d5707.css",
+    "static/js/main.432c4517.js"
+  ]
+}
