@@ -39,7 +39,7 @@
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
 }
@@ -75,7 +75,8 @@
 .navbar-links li a:hover::after {
   width: 100%;
 }
-/* Hamburger Icon (Blue lines) */
+
+/* Hamburger styles */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -84,14 +85,14 @@
 }
 
 .bar {
-  width: 25px;
+  width: 20px;
   height: 3px;
-  background-color: #60410b; /* 💙 Bright blue lines like in image */
+  background-color: #60410b; 
   transition: 0.3s;
   border-radius: 2px;
 }
 
-/* Hamburger animation when open (optional) */
+/* Hamburger animation when open */
 .bar.open:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -104,7 +105,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Responsive Navbar (Mobile) */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -116,8 +117,8 @@
     right: 0;
     background-color: #faf7f0;
     flex-direction: column;
-    width: 220px;
-    padding: 1rem;
+    width: 200px;
+    padding: 0.8rem;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.1);
@@ -129,13 +130,28 @@
   }
 
   .navbar-links li {
-    margin: 1rem 0;
+    margin: 0.4rem 0;
     text-align: right;
   }
 
   .navbar-links li a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #5a3921;
   }
 }
 
+/* Optional: Super small screen tweaks */
+@media (max-width: 480px) {
+  .navbar-links {
+    width: 170px;
+    padding: 0.6rem;
+  }
+
+  .navbar-links li a {
+    font-size: 0.95rem;
+  }
+
+  .navbar-links li {
+    margin: 0.3rem 0;
+  }
+}

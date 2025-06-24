@@ -148,8 +148,8 @@ body {
 
 /* Contact Button */
 .contact-button {
-  background-color: #8b5e3c; /* medium brown */
-  color: #fffaf0; /* off-white text */
+  background-color: #8b5e3c; 
+  color: #fffaf0; 
   border: none;
   padding: 1rem 2.5rem;
   border-radius: 8px;
@@ -161,7 +161,7 @@ body {
 }
 
 .contact-button:hover {
-  background-color: #5a3d2b; /* dark brown */
+  background-color: #5a3d2b;
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

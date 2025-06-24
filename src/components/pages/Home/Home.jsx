@@ -37,7 +37,7 @@ const Home = () => {
       {/* Services Section */}
       <section className="services" id="services">
         <div className="heading">
-          <p>What We Offer</p>
+          
           <h2>Preserving Culture & History</h2>
         </div>
 
