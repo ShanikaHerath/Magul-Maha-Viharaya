@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Magul-Maha-Viharaya
+Official React website for Magul Maha Viharaya, a historic Buddhist temple in Sri Lanka. Features include Home, About, Vision, Team, Blog, Gallery, Donations, and Contact pages. Clean, responsive design with modern animations. Built to preserve tradition with modern tech.
+>>>>>>> 71f6fe463731f14796c7aa8fc0f26da11139e0d8
