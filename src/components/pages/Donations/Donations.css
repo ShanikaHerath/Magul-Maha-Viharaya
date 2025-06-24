@@ -94,3 +94,41 @@
     text-align: center;
   }
 }
+/* Base responsive layout */
+.container, .about-container, .donation-boxes {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Media Query for Phones */
+@media (max-width: 768px) {
+  .about-container,
+  .donation-boxes {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+  }
+
+  .donation-box {
+    width: 90%;
+    margin: 1rem 0;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
