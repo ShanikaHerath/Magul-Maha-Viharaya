@@ -1,7 +1,165 @@
+/* === Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* === Root Variables === */
+:root {
+  --main-color: #8b4513;
+  --text-color: #2e2e2e;
+  --bg-color: #fffaf0;
+  --big-font: 3rem;
+  --h2-font: 2rem;
+}
+
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* === Sections === */
+section {
+  padding: 50px 10%;
+}
+
+/* ===============================
+   🌸 Home Section
+=================================*/
+.home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 2rem;
+  background: #fdf6f0;
+}
+
+.home-img img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.home-text h3 {
+  color: var(--main-color);
+  background: #f2e5d9;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.home-text h1 {
+  font-size: var(--big-font);
+  margin-bottom: 1rem;
+}
+
+.home-text span {
+  color: var(--main-color);
+}
+
+.home-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.btn {
+  background: var(--main-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 2rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #a0522d;
+}
+
+/* ===============================
+   📜 About Section
+=================================*/
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #fffef9;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.about-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+.about-title {
+  font-size: 2rem;
+  color: #8b5e3c;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.02);
+}
+
+/* ===============================
+   🖼️ Gallery Section
+=================================*/
 .gallery-page {
   padding: 4rem 2rem;
   background-color: #fcfaf6;
-  font-family: 'Poppins', sans-serif;
 }
 
 .gallery-section {
@@ -66,7 +224,7 @@
   transform: scale(1.05);
 }
 
-/* Video Section */
+/* 🎥 Video Section */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -85,4 +243,56 @@
   width: 100%;
   height: 250px;
   border: none;
+}
+
+/* ===============================
+   📬 Contact Section
+=================================*/
+.contact {
+  padding: 4rem 2rem;
+  background-color: #f5e6da;
+  text-align: center;
+}
+
+.contact-button {
+  background-color: #8b5e3c;
+  color: #fffaf0;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+  background-color: #5a3d2b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   💻 Responsive Design
+=================================*/
+@media (max-width: 768px) {
+  .about-block,
+  .about-block.reverse {
+    flex-direction: column;
+  }
+
+  .about-title {
+    text-align: center;
+  }
+
+  .about-description {
+    text-align: justify;
+  }
+
+  .contact-button {
+    width: 80%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
 }

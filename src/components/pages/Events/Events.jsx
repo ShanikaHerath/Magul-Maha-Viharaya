@@ -8,7 +8,7 @@ const eventData = [
     date: "2025-05-23",
     time: "6:00 PM",
     type: "festival",
-    icon: "🎉"
+ 
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const eventData = [
     date: "2025-06-20",
     time: "7:30 PM",
     type: "meditation",
-    icon: "🌕"
+
   },
   {
     id: 3,
@@ -24,7 +24,15 @@ const eventData = [
     date: "2025-07-05",
     time: "8:00 PM",
     type: "ritual",
-    icon: "🔔"
+
+  },
+
+  {id: 4,
+    name: "Bodhi Puuja",
+    date: "2025-08-21",
+    time: "05.00 PM",
+    type: "meditation",
+
   }
 ];
 
@@ -67,7 +75,7 @@ const Events = () => {
       </section>
 
       <section className="past-events">
-        <h2>📸 Past Events</h2>
+        <h2>Past Events</h2>
         <div className="past-gallery">
           <img src="/images/past1.jpg" alt="Past event 1" />
           <img src="/images/past2.jpg" alt="Past event 2" />
