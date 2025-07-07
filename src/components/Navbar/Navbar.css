@@ -1,50 +1,73 @@
-/* === Navbar Core === */
+/* === Core Navbar === */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #faf7f0; /* Soft beige temple tone */
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  background: #faf7f0;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transition: top 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out, background-color 0.3s ease;
   animation: fadeInDown 0.8s ease-out;
 }
 
-/* === Scroll Hide Show === */
+/* === Scroll Hide === */
 .navbar.hidden {
   top: -100px;
 }
-
 .navbar.visible {
   top: 0;
 }
 
-/* === Logo Styling === */
-.navbar-logo a,
+/* === Container === */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* === Logo === */
 .navbar-logo {
   font-size: 1.8rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: #5a3921; /* Earthy brown */
+  font-weight: bold;
+  color: #5a3921;
   font-family: 'Georgia', serif;
   letter-spacing: 1px;
-  transition: color 0.3s ease;
+  cursor: pointer;
+  z-index: 1101;
 }
 
-.navbar-logo:hover {
-  color: #a05e2b; /* Gold-brown hover */
+/* === Hamburger === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1101;
 }
 
-/* === Links and Buttons === */
+.bar {
+  width: 20px;
+  height: 3px;
+  background-color: #60410b;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.close-icon {
+  font-size: 2rem;
+  color: #5a3921;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* === Nav Links === */
 .navbar-links {
-  list-style: none;
   display: flex;
   gap: 1.2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -53,8 +76,6 @@
   position: relative;
 }
 
-/* Shared styles for <Link> and <button> */
-.navbar-links li a,
 .nav-btn {
   background: none;
   border: none;
@@ -63,19 +84,16 @@
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 4px;
-  text-decoration: none;
   font-family: inherit;
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
 }
 
-.navbar-links li a:hover,
 .nav-btn:hover {
   color: #a05e2b;
 }
 
-.navbar-links li a::after,
 .nav-btn::after {
   content: '';
   position: absolute;
@@ -87,57 +105,30 @@
   transition: width 0.3s ease;
 }
 
-.navbar-links li a:hover::after,
 .nav-btn:hover::after {
   width: 100%;
 }
 
-/* === Hamburger === */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.bar {
-  width: 20px;
-  height: 3px;
-  background-color: #60410b;
-  transition: 0.3s;
-  border-radius: 2px;
-}
-
-.bar.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.bar.open:nth-child(2) {
-  opacity: 0;
-}
-
-.bar.open:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* === Responsive === */
+/* === Responsive (Mobile) === */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
   .navbar-links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     right: 0;
+    height: 100vh;
+    width: 100%;
     background-color: #faf7f0;
     flex-direction: column;
-    width: 200px;
-    padding: 0.8rem;
+    justify-content: center;
+    align-items: center;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 0 12px;
+    z-index: 1100;
   }
 
   .navbar-links.open {
@@ -145,18 +136,16 @@
   }
 
   .navbar-links li {
-    margin: 0.4rem 0;
-    text-align: right;
+    margin: 1rem 0;
+    text-align: center;
   }
 
-  .navbar-links li a,
   .nav-btn {
-    font-size: 1rem;
-    color: #5a3921;
+    font-size: 1.2rem;
   }
 }
 
-/* === Fade animation === */
+/* === Fade In Animation === */
 @keyframes fadeInDown {
   0% {
     transform: translateY(-20px);
@@ -166,12 +155,4 @@
     transform: translateY(0);
     opacity: 1;
   }
-}
-.navbar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
 }

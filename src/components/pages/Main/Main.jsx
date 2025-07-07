@@ -102,7 +102,7 @@ const Main = () => {
       </section>
 
       {/* About Section */}
-      <section className="about-section">
+      <section id="about" className="about-section">
         <div className="about-container">
           <div className="about-block">
             <div className="about-text">
@@ -175,7 +175,7 @@ const Main = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="gallery-section">
+       <section id="gallery" className="gallery-section">
         <h2 data-aos="fade-up">Temple Gallery</h2>
 
         {/* Filter Buttons */}

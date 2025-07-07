@@ -44,6 +44,7 @@ const Events = () => {
   );
 
   return (
+    <div className="events-page">
     <div className="events-container">
       <section className="highlight-feature">
         <h2>🌟 Next Big Festival</h2>
@@ -52,6 +53,7 @@ const Events = () => {
           <p>May 23, 2025 - 6:00 PM</p>
         </div>
       </section>
+      </div>
 
       <section className="filter-section">
         <button onClick={() => setFilter("all")}>All</button>

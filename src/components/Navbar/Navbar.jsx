@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import './Navbar.css';  // Keep this path based on where Navbar.jsx lives
+import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,29 +19,37 @@ const Navbar = () => {
     navigate(path);
   };
 
+  // ✅ UPDATED: Scroll to section with offset
   const handleScrollTo = (id) => {
     closeMenu();
+    const offset = 80; // adjust this based on your navbar height
+
     if (location.pathname !== '/') {
       setPendingScrollId(id);
       navigate('/');
     } else {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+      const element = document.getElementById(id);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
   };
 
+  // ✅ UPDATED: Scroll after route change
   useEffect(() => {
     if (location.pathname === '/' && pendingScrollId) {
-      const section = document.getElementById(pendingScrollId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80;
+      const element = document.getElementById(pendingScrollId);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
         setPendingScrollId(null);
       }
     }
   }, [location, pendingScrollId]);
 
+  // Hide navbar on scroll down
   useEffect(() => {
     const controlNavbar = () => {
       if (window.scrollY > lastScrollY) setShowNavbar(false);
@@ -53,20 +61,33 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', controlNavbar);
   }, [lastScrollY]);
 
-  return (
-    <nav className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
-      <div className="navbar-container">
-        <div className="navbar-logo">MyLogo</div>
+  // Lock scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  }, [isOpen]);
 
-        <div className="hamburger" onClick={toggleMenu}>
-          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
-          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
-          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
+  return (
+    <nav className={`navbar ${showNavbar ? 'visible' : 'hidden'}`} aria-label="Main navigation">
+      <div className="navbar-container">
+        <div className="navbar-logo" onClick={() => handleScrollTo('main')}>
+          MyLogo
+        </div>
+
+        <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+          {isOpen ? (
+            <span className="close-icon">×</span>
+          ) : (
+            <>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </>
+          )}
         </div>
 
         <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
           <li><button className="nav-btn" onClick={() => handleScrollTo('main')}>Home</button></li>
-          <li><button className="nav-btn" onClick={() => handleScrollTo('about-section')}>About</button></li>
+          <li><button className="nav-btn" onClick={() => handleScrollTo('about')}>About</button></li>
           <li><button className="nav-btn" onClick={() => handleScrollTo('gallery')}>Gallery</button></li>
           <li><button className="nav-btn" onClick={() => navigateTo('/events')}>Events</button></li>
           <li><button className="nav-btn" onClick={() => navigateTo('/contact')}>Contact</button></li>
