@@ -54,7 +54,7 @@
 .form-group textarea:not(:placeholder-shown) + label {
   top: -10px;
   font-size: 0.9rem;
-  color: #7a6008;
+  color: #ffc401;
 }
 
 .submit-btn {
@@ -104,7 +104,7 @@
 }
 
 .contact-details a {
-  color: #d4af37;
+  color: #b89933;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
@@ -116,7 +116,7 @@
 
 .contact-details a:hover,
 .contact-details a:focus-visible {
-  color: #b68f27;
+  color: #e9c86e;
   border-bottom-color: #b68f27;
   outline: none;
 }

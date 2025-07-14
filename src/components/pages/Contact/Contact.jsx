@@ -53,15 +53,15 @@ const Contact = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="contact-section" data-aos="fade-up" data-aos-delay="300">
-        <h2>Reach Out</h2>
-        <div className="contact-details">
-          <p><strong>Phone:</strong> +94 77 123 4567</p>
-          <p><strong>Email:</strong> info@magulmahaviharaya.lk</p>
-          <p><strong>Facebook:</strong> <a href="https://facebook.com/magulmahaviharaya" target="_blank" rel="noreferrer">facebook.com/magulmahaviharaya</a></p>
-          <p><strong>Visiting Hours:</strong> 6:00 AM – 6:00 PM Daily</p>
-        </div>
-      </section>
+    <section className="contact-section" data-aos="fade-up" data-aos-delay="300">
+    <h2>Reach Out</h2>
+    <div className="contact-details">
+        <p><strong>Phone:</strong> <a href="tel:+94771234567">+94 77 123 4567</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@magulmahaviharaya.lk">info@magulmahaviharaya.lk</a></p>
+        <p><strong>Facebook:</strong> <a href="https://facebook.com/magulmahaviharaya" target="_blank" rel="noreferrer">facebook.com/magulmahaviharaya</a></p>
+        <p><strong>Visiting Hours:</strong> 6:00 AM – 6:00 PM Daily</p>
+    </div>
+    </section>
     </div>
   );
 };

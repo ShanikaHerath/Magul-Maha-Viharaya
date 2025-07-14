@@ -4,7 +4,7 @@ import './Donations.css';
 const Donation = () => {
   return (
     <section className="donation-section">
-      <div className="donation-container">
+      <div className="donation-container"> <br></br><br></br>
         <h2 className="donation-title">Support Magul Maha Viharaya</h2>
         <p className="donation-intro">
           Your generous contribution helps us preserve this sacred temple, support the resident monks, and maintain the ancient heritage of Magul Maha Viharaya. Every donation, big or small, is a blessing.

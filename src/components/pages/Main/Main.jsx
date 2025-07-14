@@ -51,7 +51,7 @@ const Main = () => {
     <div>
       {/* Hero Section */}
       <section className="home" id="home">
-        <div className="home-text">
+        <div className="home-text"><br></br>
           <h3>Discover Heritage</h3>
           <h1>
             Welcome to <br /> Magul Maha Viharaya <br />
