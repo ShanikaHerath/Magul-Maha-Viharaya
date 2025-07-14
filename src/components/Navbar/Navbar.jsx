@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../pages/assets/logo.jpg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +20,9 @@ const Navbar = () => {
     navigate(path);
   };
 
-  // ✅ UPDATED: Scroll to section with offset
   const handleScrollTo = (id) => {
     closeMenu();
-    const offset = 80; // adjust this based on your navbar height
+    const offset = 80; // adjust based on navbar height
 
     if (location.pathname !== '/') {
       setPendingScrollId(id);
@@ -36,7 +36,6 @@ const Navbar = () => {
     }
   };
 
-  // ✅ UPDATED: Scroll after route change
   useEffect(() => {
     if (location.pathname === '/' && pendingScrollId) {
       const offset = 80;
@@ -49,7 +48,6 @@ const Navbar = () => {
     }
   }, [location, pendingScrollId]);
 
-  // Hide navbar on scroll down
   useEffect(() => {
     const controlNavbar = () => {
       if (window.scrollY > lastScrollY) setShowNavbar(false);
@@ -61,7 +59,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', controlNavbar);
   }, [lastScrollY]);
 
-  // Lock scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
@@ -69,8 +66,8 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${showNavbar ? 'visible' : 'hidden'}`} aria-label="Main navigation">
       <div className="navbar-container">
-        <div className="navbar-logo" onClick={() => handleScrollTo('main')}>
-          MyLogo
+        <div className="navbar-logo" onClick={() => handleScrollTo('main')} style={{ cursor: 'pointer' }}>
+          <img src={logo} alt="Logo" style={{ height: '40px', objectFit: 'contain' }} />
         </div>
 
         <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
@@ -84,40 +81,42 @@ const Navbar = () => {
             </>
           )}
         </div>
-<ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-  <li>
-    <button className="nav-btn" onClick={() => handleScrollTo('home')}>
-      Home
-    </button>
-  </li>
-  <li>
-    <button className="nav-btn" onClick={() => handleScrollTo('about')}>
-      About
-    </button>
-  </li>
-  <li>
-    <button className="nav-btn" onClick={() => handleScrollTo('gallery')}>
-      Gallery
-    </button>
-  </li>
-  <li>
-    <button className="nav-btn" onClick={() => navigateTo('/events')}>
-      Events
-    </button>
-  </li>
-  <li>
-    <button className="nav-btn" onClick={() => navigateTo('/contact')}>
-      Contact
-    </button>
-  </li>
-  <li>
-    <button className="nav-btn" onClick={() => navigateTo('/donations')}>
-      Donations
-    </button>
-  </li>
-</ul>
+
+        <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
+          <li>
+            <button className="nav-btn" onClick={() => handleScrollTo('home')}>
+              Home
+            </button>
+          </li>
+          <li>
+            <button className="nav-btn" onClick={() => handleScrollTo('about')}>
+              About
+            </button>
+          </li>
+          <li>
+            <button className="nav-btn" onClick={() => handleScrollTo('gallery')}>
+              Gallery
+            </button>
+          </li>
+          <li>
+            <button className="nav-btn" onClick={() => navigateTo('/events')}>
+              Events
+            </button>
+          </li>
+          <li>
+            <button className="nav-btn" onClick={() => navigateTo('/contact')}>
+              Contact
+            </button>
+          </li>
+          <li>
+            <button className="nav-btn" onClick={() => navigateTo('/donations')}>
+              Donations
+            </button>
+          </li>
+        </ul>
       </div>
     </nav>
   );
-}
+};
+
 export default Navbar;
