@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Home/Home.css';      // Adjust paths based on your folder structure
+import '../Home/Home.css';
 import '../About/About.css';
 import '../Gallery/Gallery.css';
 import { useNavigate } from 'react-router-dom';
@@ -7,13 +7,20 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import people from '../assets/people.webp';
+import offerings1 from '../assets/Offerings1.jpg';      
+import ordination from '../assets/Ordination.jpg';     
+import wesak from '../assets/wesak.jpg';               
+import ordination2 from '../assets/Ordination2.webp';   
+import offerings from '../assets/Offerings.webp';       
+
 const galleryItems = [
-  { id: 1, src: 'https://via.placeholder.com/400x300', category: 'Vesak' },
-  { id: 2, src: 'https://via.placeholder.com/400x300', category: 'Offerings' },
-  { id: 3, src: 'https://via.placeholder.com/400x300', category: 'Ordination' },
-  { id: 4, src: 'https://via.placeholder.com/400x300', category: 'Vesak' },
-  { id: 5, src: 'https://via.placeholder.com/400x300', category: 'Offerings' },
-  { id: 6, src: 'https://via.placeholder.com/400x300', category: 'Ordination' },
+  { id: 1, src: people, category: 'Vesak' },
+  { id: 2, src: offerings1, category: 'Offerings' },
+  { id: 3, src: ordination, category: 'Ordination' },
+  { id: 4, src: wesak, category: 'Vesak' },
+  { id: 5, src: offerings, category: 'Offerings' }, 
+  { id: 6, src: ordination2, category: 'Ordination' },
 ];
 
 const Main = () => {
@@ -23,6 +30,13 @@ const Main = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const scrollToContact = () => {
+    const section = document.getElementById('contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleContactClick = () => {
     navigate('/contact');
@@ -47,7 +61,7 @@ const Main = () => {
             Explore the ancient Buddhist temple of historical significance,
             where tradition meets timeless serenity in the heart of Sri Lanka.
           </p>
-          <button className="btn" onClick={() => navigate('#contact')}>
+          <button className="btn" onClick={scrollToContact}>
             Learn More
           </button>
         </div>
@@ -175,7 +189,7 @@ const Main = () => {
       </section>
 
       {/* Gallery Section */}
-       <section id="gallery" className="gallery-section">
+      <section id="gallery" className="gallery-section">
         <h2 data-aos="fade-up">Temple Gallery</h2>
 
         {/* Filter Buttons */}
@@ -215,7 +229,7 @@ const Main = () => {
         <div className="video-grid" data-aos="fade-up" data-aos-delay="200">
           <div className="video-card">
             <iframe
-              src="https://www.youtube.com/embed/ScMzIvxBSi4"
+              src="https://www.youtube.com/embed/c2-pCpLV74U"
               title="Temple Ceremony"
               frameBorder="0"
               allowFullScreen
@@ -223,7 +237,7 @@ const Main = () => {
           </div>
           <div className="video-card">
             <iframe
-              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              src="https://www.youtube.com/embed/4_dRe1iHnco"
               title="Vesak Celebration"
               frameBorder="0"
               allowFullScreen

@@ -1,134 +1,140 @@
+/* Base Styles — Mobile First */
 .donation-section {
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 5vw, 4rem) 1.5rem;
   background-color: #f9f6f2;
   font-family: 'Poppins', sans-serif;
+  color: #4a3a2a;
+  line-height: 1.6;
 }
 
 .donation-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 1rem;
 }
 
 .donation-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: #8b5e3c;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 1px rgba(139, 94, 60, 0.3);
 }
 
 .donation-intro {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   margin-bottom: 3rem;
-  color: #444;
-  line-height: 1.8;
+  color: #5a4a3b;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Using CSS Grid for better responsiveness */
 .donation-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 3rem;
+  padding: 0 0.5rem;
 }
 
 .donation-box {
   background-color: #fff;
   border: 2px solid #e2dcd5;
-  border-radius: 12px;
-  padding: 2rem;
-  width: 280px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
 }
 
-.donation-box:hover {
-  transform: translateY(-5px);
+.donation-box:hover,
+.donation-box:focus-within {
+  transform: translateY(-8px);
   border-color: #c59f70;
+  box-shadow: 0 15px 30px rgba(197, 159, 112, 0.4);
+  outline: none;
 }
 
 .donation-box h3 {
   color: #8b5e3c;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.3rem, 4vw, 1.5rem);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .donation-box p {
-  color: #333;
-  font-size: 1rem;
+  color: #3f3424;
+  font-size: clamp(0.95rem, 3vw, 1rem);
+  margin-top: auto;
 }
 
+/* Donation Methods Section */
 .donation-methods {
   background-color: #fffef9;
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 14px;
+  padding: 2.5rem 3rem;
   text-align: left;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+  max-width: 900px;
+  margin: 0 auto;
+  color: #5a4a3b;
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  line-height: 1.75;
 }
 
 .donation-methods h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.6rem, 4vw, 1.8rem);
   color: #8b5e3c;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
 }
 
 .donation-methods p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #444;
-  margin: 0.5rem 0;
+  margin: 0.7rem 0;
+  font-weight: 400;
 }
 
+/* Note Text */
 .note {
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
   font-style: italic;
-  color: #666;
+  color: #7a6e63;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (max-width: 768px) {
-  .donation-boxes {
-    flex-direction: column;
-    align-items: center;
-  }
-
+/* Responsive Adjustments */
+@media (max-width: 992px) {
   .donation-methods {
+    padding: 2rem;
     text-align: center;
   }
 }
-/* Base responsive layout */
-.container, .about-container, .donation-boxes {
-  width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
-/* Media Query for Phones */
-@media (max-width: 768px) {
-  .about-container,
-  .donation-boxes {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .navbar-links {
-    flex-direction: column;
+@media (max-width: 576px) {
+  .donation-container,
+  .donation-methods {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .donation-box {
-    width: 90%;
-    margin: 1rem 0;
+    padding: 1.5rem 1.8rem;
   }
 
-  .footer-section {
-    flex-direction: column;
-    text-align: center;
+  .donation-title {
+    font-size: 2rem;
   }
 }

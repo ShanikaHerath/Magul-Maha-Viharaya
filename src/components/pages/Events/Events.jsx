@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "./Events.css";
 
+import peraheraImg from '../assets/perahera.jpg';
+import bodipujaImg from '../assets/bodipuja.webp';
+import katinaImg from '../assets/katina.webp';
+
 const eventData = [
   {
     id: 1,
@@ -8,7 +12,6 @@ const eventData = [
     date: "2025-05-23",
     time: "6:00 PM",
     type: "festival",
- 
   },
   {
     id: 2,
@@ -16,7 +19,6 @@ const eventData = [
     date: "2025-06-20",
     time: "7:30 PM",
     type: "meditation",
-
   },
   {
     id: 3,
@@ -24,64 +26,75 @@ const eventData = [
     date: "2025-07-05",
     time: "8:00 PM",
     type: "ritual",
-
   },
-
-  {id: 4,
+  {
+    id: 4,
     name: "Bodhi Puuja",
     date: "2025-08-21",
-    time: "05.00 PM",
+    time: "5:00 PM",
     type: "meditation",
-
-  }
+  },
 ];
 
 const Events = () => {
   const [filter, setFilter] = useState("all");
 
-  const filteredEvents = eventData.filter(event =>
+  const filteredEvents = eventData.filter((event) =>
     filter === "all" ? true : event.type === filter
   );
 
   return (
     <div className="events-page">
-    <div className="events-container">
-      <section className="highlight-feature">
-        <h2>🌟 Next Big Festival</h2>
-        <div className="highlight-banner">
-          <h3>Vesak Festival</h3>
-          <p>May 23, 2025 - 6:00 PM</p>
+
+  
+      {/* Fixed Annual Events */}
+      <section className="section-header">
+        <h2>Annual Ceremonies</h2><br></br>
+          <div className="event-cards">
+          <div className="event-card">
+            <h3>Vesak Festival</h3>
+            <p>June Full Moon Day</p>
+            <p>🕢 5:30 AM</p>
+          </div>
+         <div className="event-card">
+            <h3>Poson Festival</h3>
+            <p>June Full Moon Day</p>
+            <p>🕢 6:30 AM</p>
+          </div>
+          <div className="event-card">
+            <h3>Sil Observance</h3>
+            <p>Monthly Poya Days</p>
+            <p>🕘 8:00 AM</p>
+          </div>
+          <div className="event-card">
+            <h3>Katina Ceremony</h3>
+            <p>November First Week</p>
+            <p>🕔 5:00 PM</p>
+          </div>
         </div>
       </section>
-      </div>
 
-      <section className="filter-section">
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("festival")}>Festivals</button>
-        <button onClick={() => setFilter("meditation")}>Meditation</button>
-        <button onClick={() => setFilter("ritual")}>Rituals</button>
-      </section>
-
-      <section className="upcoming-events">
-        <h2>📅 Upcoming Events</h2>
-        <div className="event-cards">
-          {filteredEvents.map(event => (
-            <div className="event-card" key={event.id}>
-              <div className="event-icon">{event.icon}</div>
-              <h3>{event.name}</h3>
-              <p>{event.date}</p>
-              <p>{event.time}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="past-events">
-        <h2>Past Events</h2>
+      {/* Past Events Gallery */}
+      <section className="section-header">
+        <h2>Past Events</h2><br></br>
         <div className="past-gallery">
-          <img src="/images/past1.jpg" alt="Past event 1" />
-          <img src="/images/past2.jpg" alt="Past event 2" />
-          <img src="/images/past3.jpg" alt="Past event 3" />
+          <div className="past-gallery-item">
+            <img src={peraheraImg} alt="Perahera Festival" />
+            <div className="event-date">August 2024</div>
+            <div className="event-caption">Perahera Festival Celebration</div>
+          </div>
+
+          <div className="past-gallery-item">
+            <img src={bodipujaImg} alt="Bodhi Puja" />
+            <div className="event-date">July 2024</div>
+            <div className="event-caption">Bodhi Puja Ceremony</div>
+          </div>
+
+          <div className="past-gallery-item">
+            <img src={katinaImg} alt="Katina Ceremony" />
+            <div className="event-date">November 2023</div>
+            <div className="event-caption">Katina Robe Offering</div>
+          </div>
         </div>
       </section>
     </div>

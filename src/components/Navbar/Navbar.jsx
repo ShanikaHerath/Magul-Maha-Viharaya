@@ -84,18 +84,40 @@ const Navbar = () => {
             </>
           )}
         </div>
-
-        <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-          <li><button className="nav-btn" onClick={() => handleScrollTo('main')}>Home</button></li>
-          <li><button className="nav-btn" onClick={() => handleScrollTo('about')}>About</button></li>
-          <li><button className="nav-btn" onClick={() => handleScrollTo('gallery')}>Gallery</button></li>
-          <li><button className="nav-btn" onClick={() => navigateTo('/events')}>Events</button></li>
-          <li><button className="nav-btn" onClick={() => navigateTo('/contact')}>Contact</button></li>
-          <li><button className="nav-btn" onClick={() => navigateTo('/donations')}>Donations</button></li>
-        </ul>
+<ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
+  <li>
+    <button className="nav-btn" onClick={() => handleScrollTo('home')}>
+      Home
+    </button>
+  </li>
+  <li>
+    <button className="nav-btn" onClick={() => handleScrollTo('about')}>
+      About
+    </button>
+  </li>
+  <li>
+    <button className="nav-btn" onClick={() => handleScrollTo('gallery')}>
+      Gallery
+    </button>
+  </li>
+  <li>
+    <button className="nav-btn" onClick={() => navigateTo('/events')}>
+      Events
+    </button>
+  </li>
+  <li>
+    <button className="nav-btn" onClick={() => navigateTo('/contact')}>
+      Contact
+    </button>
+  </li>
+  <li>
+    <button className="nav-btn" onClick={() => navigateTo('/donations')}>
+      Donations
+    </button>
+  </li>
+</ul>
       </div>
     </nav>
   );
-};
-
+}
 export default Navbar;
