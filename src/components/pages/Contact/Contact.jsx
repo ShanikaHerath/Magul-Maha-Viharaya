@@ -38,14 +38,17 @@ const Contact = () => {
       <section className="contact-section" data-aos="fade-up" data-aos-delay="200">
         <h2>Temple Location</h2>
         <div className="map-container">
-          <iframe
-            title="Temple Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.27433227176!2d81.000000!3d6.866667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AMagul%20Maha%20Viharaya!5e0!3m2!1sen!2slk!4v0000000000000"
-            width="100%"
-            height="350"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
+       <iframe
+       title="Lahugala Magul Maha Viharaya Location"
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.193954434395!2d81.734076974996!3d6.867347093131308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5a4df12861051%3A0x71f6023e41a7f7c7!2sLahugala%20Magul%20Maha%20Viharaya!5e0!3m2!1sen!2slk!4v1752494058149!5m2!1sen!2slk"
+       width="100%"
+       height="350"
+       style={{ border: 0 }}
+       allowFullScreen=""
+       loading="lazy"
+       referrerPolicy="no-referrer-when-downgrade"
+       />
+
         </div>
       </section>
 

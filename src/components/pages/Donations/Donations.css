@@ -1,7 +1,7 @@
 /* Base Styles — Mobile First */
 .donation-section {
   padding: clamp(2rem, 5vw, 4rem) 1.5rem;
-  background-color: #f9f6f2;
+  background-color: #f0e5d7;
   font-family: 'Poppins', sans-serif;
   color: #4a3a2a;
   line-height: 1.6;
@@ -24,13 +24,40 @@
   text-shadow: 0 1px 1px rgba(139, 94, 60, 0.3);
 }
 
-.donation-intro {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  margin-bottom: 3rem;
-  color: #5a4a3b;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+/* Highlighted h3 with subtle background */
+.donation-box h3 {
+  position: relative;
+  font-size: clamp(1.3rem, 4vw, 1.5rem);
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  color: #7a5230;
+  line-height: 1.1;
+  padding-bottom: 0.3rem;
+  display: inline-block;
+  z-index: 1;
+}
+
+.donation-box h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.35em;
+  background: rgba(197, 159, 112, 0.3);
+  border-radius: 4px;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.donation-box:hover h3::after {
+  background: rgba(197, 159, 112, 0.5);
+}
+
+.donation-box p {
+  color: #3f3424;
+  font-size: clamp(0.95rem, 3vw, 1rem);
+  margin-top: auto;
 }
 
 /* Using CSS Grid for better responsiveness */
@@ -64,20 +91,6 @@
   outline: none;
 }
 
-.donation-box h3 {
-  color: #8b5e3c;
-  font-size: clamp(1.3rem, 4vw, 1.5rem);
-  margin-bottom: 0.6rem;
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.donation-box p {
-  color: #3f3424;
-  font-size: clamp(0.95rem, 3vw, 1rem);
-  margin-top: auto;
-}
-
 /* Donation Methods Section */
 .donation-methods {
   background-color: #fffef9;
@@ -97,6 +110,26 @@
   color: #8b5e3c;
   margin-bottom: 1.2rem;
   font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.donation-methods h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 0.25em;
+  background: rgba(197, 159, 112, 0.35);
+  border-radius: 4px;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.donation-methods h3:hover::after {
+  background: rgba(197, 159, 112, 0.55);
 }
 
 .donation-methods p {

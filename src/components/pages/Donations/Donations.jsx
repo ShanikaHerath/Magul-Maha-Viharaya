@@ -8,19 +8,19 @@ const Donation = () => {
         <h2 className="donation-title">Support Magul Maha Viharaya</h2>
         <p className="donation-intro">
           Your generous contribution helps us preserve this sacred temple, support the resident monks, and maintain the ancient heritage of Magul Maha Viharaya. Every donation, big or small, is a blessing.
-        </p>
+        </p><br></br>
 
         <div className="donation-boxes">
           <div className="donation-box">
-            <h3>🙏 Basic Offering</h3>
+            <h3>Basic Offering</h3>
             <p>LKR 500 - Helps with daily temple rituals & oil lamps</p>
           </div>
           <div className="donation-box">
-            <h3>📿 Spiritual Support</h3>
+            <h3>Spiritual Support</h3>
             <p>LKR 2,000 - Supports monks’ meals and chanting sessions</p>
           </div>
           <div className="donation-box">
-            <h3>🏛️ Heritage Guardian</h3>
+            <h3>Heritage Guardian</h3>
             <p>LKR 5,000+ - Aids in structural conservation and meditation events</p>
           </div>
         </div>

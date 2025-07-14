@@ -4,6 +4,10 @@ import "./Events.css";
 import peraheraImg from '../assets/perahera.jpg';
 import bodipujaImg from '../assets/bodipuja.webp';
 import katinaImg from '../assets/katina.webp';
+import wesakImg from '../assets/thorana.jpg';
+import posonImg from '../assets/poson2.png';
+import bodipujaImg1 from '../assets/bodipujaImg1.jpg';
+
 
 const eventData = [
   {
@@ -78,6 +82,13 @@ const Events = () => {
       <section className="section-header">
         <h2>Past Events</h2><br></br>
         <div className="past-gallery">
+
+        <div className="past-gallery-item">
+         <img src={bodipujaImg1} alt="Daily Bodhi Pooja" />
+         <div className="event-date">Ongoing</div>
+         <div className="event-caption">Daily Bodhi Pooja Ceremony</div>
+       </div>
+
           <div className="past-gallery-item">
             <img src={peraheraImg} alt="Perahera Festival" />
             <div className="event-date">August 2024</div>
@@ -95,6 +106,19 @@ const Events = () => {
             <div className="event-date">November 2023</div>
             <div className="event-caption">Katina Robe Offering</div>
           </div>
+
+          <div className="past-gallery-item">
+            <img src={wesakImg} alt="Vesak Festival" />
+            <div className="event-date">May 2024</div>
+            <div className="event-caption">Vesak Festival Celebration</div>
+          </div>
+
+        <div className="past-gallery-item">
+          <img src={posonImg} alt="Poson Festival" />
+          <div className="event-date">June 2024</div>
+         <div className="event-caption">Poson Festival Observance</div>
+       </div>
+
         </div>
       </section>
     </div>
