@@ -48,70 +48,73 @@ const Main = () => {
       : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <div>
+    <div className="main-wrapper">
       {/* Hero Section */}
       <section className="home" id="home">
-        <div className="home-text"><br></br>
-          <h3>Discover Heritage</h3>
+        <motion.div 
+          className="home-text"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h3>Discover Sacred Heritage</h3>
           <h1>
-            Welcome to <br /> Magul Maha Viharaya <br />
-            <span>Sacred Temple of Ruhuna</span>
+            Welcome to <br /> Magul Maha Viharaya
+            <span>The Royal Temple of Ruhuna</span>
           </h1>
           <p>
-            Explore the ancient Buddhist temple of historical significance,
-            where tradition meets timeless serenity in the heart of Sri Lanka.
+            Journey into the heart of ancient Sri Lanka. A sacred sanctuary where royal history 
+            meets timeless serenity, nestled within the lush greenery of the southeast.
           </p>
-          <button className="btn" onClick={scrollToContact}>
-            Learn More
-          </button>
-        </div>
-        <div className="home-img">
+          <div className="home-btns">
+            <button className="btn" onClick={scrollToContact}>
+              Plan Your Visit
+            </button>
+          </div>
+        </motion.div>
+        
+        <motion.div 
+          className="home-img"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
           <img
             src="https://www.lovesrilanka.org/wp-content/uploads/2020/04/LS_Magul-Maha-Viharaya-Page_MOB_800x1000.jpg"
-            alt="Magul Maha Viharaya"
+            alt="Magul Maha Viharaya Temple View"
           />
-        </div>
+        </motion.div>
       </section>
 
       {/* Services Section */}
       <section className="services" id="services">
-        <div className="heading">
-          <h2>Preserving Culture & History</h2>
+        <div className="heading" data-aos="fade-up">
+          <h2>Preserving Centuries of Wisdom</h2>
         </div>
         <div className="services-container">
-          <div className="box">
-            <img
-              src="https://png.pngtree.com/png-vector/20191017/ourmid/pngtree-book-icon-png-image_1820088.jpg"
-              alt="heritage"
-            />
-            <h2>Historical Significance</h2>
-            <p>
-              This ancient site is believed to be the location where King Kavantissa
-              married Viharamahadevi.
-            </p>
-          </div>
-          <div className="box">
-            <img
-              src="https://previews.123rf.com/images/sobahus/sobahus2009/sobahus200900027/155146167-peace-line-symbol-hand-and-peace-icon-design-template-vector.jpg"
-              alt="peace"
-            />
-            <h2>Peaceful Surroundings</h2>
-            <p>
-              The temple is nestled in lush greenery, offering spiritual calm and
-              cultural richness.
-            </p>
-          </div>
-          <div className="box">
-            <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/002/595/034/small/guide-arrows-travel-tourism-location-linear-icon-style-free-vector.jpg"
-              alt="guidance"
-            />
-            <h2>Guided Visits</h2>
-            <p>
-              Learn from monks and historians about the temple’s deep roots and
-              architectural legacy.
-            </p>
-          </div>
+          {[
+            {
+              img: "https://png.pngtree.com/png-vector/20191017/ourmid/pngtree-book-icon-png-image_1820088.jpg",
+              title: "Ancient Roots",
+              desc: "Witness the legendary site where King Kavan Tissa and Queen Viharamahadevi were united in royal matrimony."
+            },
+            {
+              img: "https://previews.123rf.com/images/sobahus/sobahus2009/sobahus200900027/155146167-peace-line-symbol-hand-and-peace-icon-design-template-vector.jpg",
+              title: "Spiritual Calm",
+              desc: "Escape the modern world in our tranquil gardens and meditation spaces, designed for inner peace."
+            },
+            {
+              img: "https://static.vecteezy.com/system/resources/thumbnails/002/595/034/small/guide-arrows-travel-tourism-location-linear-icon-style-free-vector.jpg",
+              title: "Cultural Legacy",
+              desc: "Explore masterfully carved moonstones and stone pillars that define the architectural brilliance of Ruhuna."
+            }
+          ].map((service, index) => (
+            <div className="box glass-card" key={index} data-aos="fade-up" data-aos-delay={index * 150}>
+              <img src={service.img} alt={service.title} />
+              <h2>{service.title}</h2>
+              <p>{service.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -119,69 +122,52 @@ const Main = () => {
       <section id="about" className="about-section">
         <div className="about-container">
           <div className="about-block">
-            <div className="about-text">
+            <div className="about-text" data-aos="fade-right">
               <h2 className="about-title">Sacred Origins</h2>
               <p className="about-description">
-                Magul Maha Viharaya is a sacred Buddhist temple located in the
-                serene southeast of Sri Lanka. Rooted in centuries of heritage, it
-                served as a spiritual sanctuary and cultural heart for generations.
+                Magul Maha Viharaya is more than a monument; it's a living archive of Sri Lankan history. 
+                Located in the serene Lahugala region, it has served as a beacon of Buddhist philosophy 
+                and royal prestige for over two millennia.
               </p>
             </div>
-            <div className="about-image">
+            <div className="about-image" data-aos="zoom-in">
               <img
                 src="https://www.srilankanexpeditions.com/images/sri-lanka-travel-guide/history-archaeology-sri-lanka/ancient-temple/magul-maha-viharaya/slider1.jpg"
-                alt="Sacred Origins"
+                alt="Ancient Temple Stupa"
               />
             </div>
           </div>
 
           <div className="about-block reverse">
-            <div className="about-text">
-              <h2 className="about-title">Royal Wedding</h2>
+            <div className="about-text" data-aos="fade-left">
+              <h2 className="about-title">The Royal Union</h2>
               <p className="about-description">
-                The temple is believed to be the exact location of the royal wedding
-                of King Kavan Tissa and Queen Viharamahadevi. The word “Magul” means
-                wedding — tying the place to ancient royalty.
+                Steeped in romance and valor, this is the hallowed ground where the Great King Kavan Tissa 
+                wed Princess Viharamahadevi. The name 'Magul' celebrates this historic marriage that 
+                changed the course of the island's history.
               </p>
             </div>
-            <div className="about-image">
+            <div className="about-image" data-aos="zoom-in">
               <img
                 src="https://storyofsrilanka.com/images/slider/sri-lanka-guide-destinations/magul-maha-viharaya/01.jpg"
-                alt="Royal Wedding"
+                alt="Royal Wedding Location"
               />
             </div>
           </div>
 
           <div className="about-block">
-            <div className="about-text">
-              <h2 className="about-title">Architectural Elegance</h2>
+            <div className="about-text" data-aos="fade-right">
+              <h2 className="about-title">Architectural Marvel</h2>
               <p className="about-description">
-                From ancient moonstones to stone pillars and a majestic stupa, Magul
-                Maha Viharaya showcases the architectural brilliance of the
-                Anuradhapura era.
+                The temple boasts one of the best-preserved moonstones in Sri Lanka, unique for its 
+                intricate carvings of elephants and riders. Every stone pillar tells a story of 
+                devotion and artistic mastery from the golden age of Anuradhapura.
               </p>
             </div>
-            <div className="about-image">
+            <div className="about-image" data-aos="zoom-in">
               <img
                 src="https://storyofsrilanka.com/images/sri-lanka-guide/ancient-temple/magul-maha-viharaya/01.jpg"
-                alt="Architecture"
-              />
-            </div>
-          </div>
-
-          <div className="about-block reverse">
-            <div className="about-text">
-              <h2 className="about-title">Living Heritage</h2>
-              <p className="about-description">
-                More than ruins, this temple remains active — a spiritual haven
-                where monks meditate and visitors find inner peace beneath ancient
-                trees.
-              </p>
-            </div>
-            <div className="about-image">
-              <img
-                src="https://arugambay.org/wp-content/uploads/2017/07/moonStone1-blog.jpg"
-                alt="Living Temple"
+                alt="Ancient Stone Carvings"
               />
             </div>
           </div>
@@ -192,8 +178,7 @@ const Main = () => {
       <section id="gallery" className="gallery-section">
         <h2 data-aos="fade-up">Temple Gallery</h2>
 
-        {/* Filter Buttons */}
-        <div className="filter-buttons" data-aos="fade-up" data-aos-delay="100">
+        <div className="filter-buttons" data-aos="fade-up">
           {['All', 'Vesak', 'Ordination', 'Offerings'].map((cat) => (
             <button
               key={cat}
@@ -205,16 +190,18 @@ const Main = () => {
           ))}
         </div>
 
-        {/* Image Grid */}
         <motion.div className="gallery-grid" layout>
-          <AnimatePresence>
+          <AnimatePresence mode='popLayout'>
             {filteredItems.map((item) => (
               <motion.div
                 className="gallery-item"
                 key={item.id}
                 layout
-                data-aos="zoom-in"
-                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ y: -10 }}
               >
                 <img src={item.src} alt={item.category} />
               </motion.div>
@@ -225,32 +212,30 @@ const Main = () => {
 
       {/* Video Section */}
       <section className="video-section">
-        <h2 data-aos="fade-up">Temple Videos</h2>
-        <div className="video-grid" data-aos="fade-up" data-aos-delay="200">
-          <div className="video-card">
-            <iframe
-              src="https://www.youtube.com/embed/c2-pCpLV74U"
-              title="Temple Ceremony"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="video-card">
-            <iframe
-              src="https://www.youtube.com/embed/4_dRe1iHnco"
-              title="Vesak Celebration"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
+        <h2 data-aos="fade-up">Explore Through Video</h2>
+        <div className="video-grid">
+          {[
+            { id: "c2-pCpLV74U", title: "Temple Ceremony" },
+            { id: "4_dRe1iHnco", title: "Vesak Celebration" }
+          ].map((video, index) => (
+            <div className="video-card" key={index} data-aos="zoom-in" data-aos-delay={index * 200}>
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.title}
+                allowFullScreen
+              ></iframe>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="contact" id="contact">
-        <div className="heading">
+      {/* Contact CTA */}
+      <section className="contact-cta" id="contact">
+        <div className="contact glass-card" data-aos="fade-up">
+          <h2>Ready to Explore Ruhuna's History?</h2>
+          <p style={{marginBottom: '2rem', opacity: 0.9}}>Contact us for guided tours, donation inquiries, or visiting information.</p>
           <button className="contact-button" onClick={handleContactClick}>
-            Contact Us
+            Get in Touch
           </button>
         </div>
       </section>
