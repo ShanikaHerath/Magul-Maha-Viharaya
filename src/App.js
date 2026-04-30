@@ -10,7 +10,7 @@ import Events from './components/pages/Events/Events';
 
 function App() {
   return (
-    <Router basename={window.location.pathname.startsWith('/Magul-Maha-Viharaya') ? '/Magul-Maha-Viharaya' : ''}>
+    <Router>
       <div className="App">
         <Navbar />
         <ScrollToTop />
