@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Events.css";
 
 import peraheraImg from '../assets/perahera.jpg';
@@ -9,44 +9,7 @@ import posonImg from '../assets/poson2.png';
 import bodipujaImg1 from '../assets/bodipujaImg1.jpg';
 
 
-const eventData = [
-  {
-    id: 1,
-    name: "Vesak Festival",
-    date: "2025-05-23",
-    time: "6:00 PM",
-    type: "festival",
-  },
-  {
-    id: 2,
-    name: "Full Moon Meditation",
-    date: "2025-06-20",
-    time: "7:30 PM",
-    type: "meditation",
-  },
-  {
-    id: 3,
-    name: "Annual Pirith Chanting",
-    date: "2025-07-05",
-    time: "8:00 PM",
-    type: "ritual",
-  },
-  {
-    id: 4,
-    name: "Bodhi Puuja",
-    date: "2025-08-21",
-    time: "5:00 PM",
-    type: "meditation",
-  },
-];
-
 const Events = () => {
-  const [filter, setFilter] = useState("all");
-
-  const filteredEvents = eventData.filter((event) =>
-    filter === "all" ? true : event.type === filter
-  );
-
   return (
     <div className="events-page">
 
