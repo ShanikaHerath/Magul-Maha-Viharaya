@@ -104,3 +104,39 @@
     padding: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .donation-section {
+    padding-top: 100px;
+  }
+  .donation-title {
+    font-size: 1.8rem;
+  }
+  .donation-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .donation-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .donation-box {
+    padding: 2rem 1.5rem;
+  }
+  .donation-methods {
+    padding: 1.5rem;
+  }
+  .donation-methods h3 {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .donation-methods p {
+    font-size: 1rem;
+  }
+  .donation-methods strong {
+    display: block;
+    min-width: auto;
+    margin-bottom: 5px;
+  }
+}

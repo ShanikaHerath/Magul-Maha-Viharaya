@@ -124,3 +124,22 @@
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .about-container {
+    gap: 3rem;
+  }
+  .about-block, .about-block.reverse {
+    gap: 1.5rem;
+  }
+  .about-title {
+    font-size: 1.8rem;
+  }
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .about-image img {
+    height: 250px;
+  }
+}

@@ -85,3 +85,30 @@
     padding-left: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 60px 5% 30px;
+    margin-top: 3rem;
+  }
+  .footer-container {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-logo h2 {
+    font-size: 1.5rem;
+  }
+  .footer-logo p {
+    font-size: 0.9rem;
+    margin: 0 auto;
+  }
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+    padding-top: 20px;
+  }
+}
