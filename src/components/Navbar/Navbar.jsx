@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../pages/assets/logo.jpg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +66,7 @@ const Navbar = () => {
     <nav className={`navbar ${showNavbar ? 'visible' : 'hidden'}`} aria-label="Main navigation">
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => handleScrollTo('main')} style={{ cursor: 'pointer' }}>
-          <img src={logo} alt="Logo" style={{ height: '40px', objectFit: 'contain' }} />
+          <img src="/logo.png" alt="Logo" style={{ height: '40px', objectFit: 'contain' }} />
         </div>
 
         <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle menu">
