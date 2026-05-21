@@ -70,16 +70,10 @@ const Navbar = () => {
           <img src={logo} alt="Logo" style={{ height: '40px', objectFit: 'contain' }} />
         </div>
 
-        <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
-          {isOpen ? (
-            <span className="close-icon">×</span>
-          ) : (
-            <>
-              <span className="bar"></span>
-              <span className="bar"></span>
-              <span className="bar"></span>
-            </>
-          )}
+        <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle menu">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
 
         <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
