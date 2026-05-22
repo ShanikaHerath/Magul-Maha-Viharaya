@@ -83,6 +83,30 @@ const Main = () => {
             src="https://www.lovesrilanka.org/wp-content/uploads/2020/04/LS_Magul-Maha-Viharaya-Page_MOB_800x1000.jpg"
             alt="Magul Maha Viharaya Temple View"
           />
+          <motion.div 
+            className="floating-badge"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            <div className="badge-icon">🏛️</div>
+            <div className="badge-text">
+              <h4>2000+ Years</h4>
+              <p>of Sacred History</p>
+            </div>
+          </motion.div>
+          <motion.div 
+            className="floating-badge badge-top"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.2 }}
+          >
+            <div className="badge-icon">🪷</div>
+            <div className="badge-text">
+              <h4>Inner Peace</h4>
+              <p>Tranquil Sanctuary</p>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
